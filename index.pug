@@ -1,0 +1,230 @@
+-
+    var worksList = [
+        {
+            name: "Список дефектов для акта приёма-передачи",
+            val: "Список дефектов для акта приёма-передачи"
+        },
+        {
+            name: "Анемометр (проверка вентиляии)",
+            val: "Анемометр (проверка вентиляии)"
+        },
+        {
+            name: "Монитор воздуха (влажность, температура, CO2)",
+            val: "Монитор воздуха (влажность, температура, CO2)"
+        },
+        {
+            name: "Проверка отклонений от вертикали/горизонтали/плоскостности",
+            val: "Проверка отклонений от вертикали/горизонтали/плоскостности"
+        },
+        {
+            name: "Проверка эндоскопом труднодоступных мест",
+            val: "Проверка эндоскопом труднодоступных мест"
+        },
+        {
+            name: "Проверка электросетей и выводов под них (заземление, УЗО, слаботочка)",
+            val: "Проверка электросетей и выводов под них (заземление, УЗО, слаботочка)"
+        },
+        {
+            name: "Замер шума",
+            val: "Замер шума"
+        }
+    ];
+-
+    var otherList = [
+        {
+            name: "Контрольный замер площади",
+            val: "Контрольный замер площади",
+            id: "testControl"
+        },
+        {
+            name: "Замер электромагнитного фона",
+            val: "Замер электромагнитного фона",
+            id: "testMagnetic"
+        },
+        {
+            name: "Замер радиационного фона",
+            val: "Замер радиационного фона",
+            id: "testRadiation"
+        },
+        {
+            name: "Замер аммиака",
+            val: "Замер аммиака"
+        },
+        {
+            name: "Тепловизионное обследование",
+            val: "Тепловизионное обследование",
+            id: "thermal"
+        },
+        {
+            name: "— Нужен ли отчёт по тепловизионному обследованию?",
+            val: "— Нужен ли отчёт по тепловизионному обследованию?",
+            id: "thermalReport"
+        }
+    ];
+-
+    var otherList2 = [
+        {
+            name: "Нужно ли вам Заключение специалиста с фото и нормативами?",
+            val: "Нужно ли вам Заключение специалиста с фото и нормативами?",
+            id:"conclusion"
+        },
+        {
+            name: "Приёмка после ремонта",
+            val: "Приёмка после ремонта",
+            id: "inspection"
+        },
+    ];
+
+
+mixin ccheckbox(i,name,checked,disabled)
+    label.ccheckbox
+        input(type="checkbox" disabled=disabled name=name readonly checked=(i.checked)?i.checked:checked value=i.val id=i.id).ccheckbox__input
+        span.ccheckbox__view
+            span.ccheckbox__name!=i.name
+            span.ccheckbox__check.
+                <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                </svg>
+
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        title Document
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap' rel='stylesheet')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' integrity='sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+        link(rel='stylesheet' href='js/jQueryFormStyler/dist/jquery.formstyler.css')
+        link(rel='stylesheet' href='js/jQueryFormStyler/dist/jquery.formstyler.theme.css')
+        link(rel='stylesheet' href='style.css')
+    body
+        form.calc#calc
+            .calc__title КАЛЬКУЛЯТОР СТОИМОСТИ ПРИЁМКИ
+            .calc__blocks
+                .calc__block.cblock
+                    .cblock__fields
+                        .cblock__field.cfield
+                            .cfield__row
+                                .cfield__left
+                                    .cfield__name Введите площадь (30 - минимум) м2:
+                                .cfield__right
+                                    input(type="number" id="square" name="square" value=30).cinput
+                        .cblock__field.cfield
+                            .cfield__row
+                                .cfield__left
+                                    .cfield__name Выберите вид отделки:
+                                .cfield__right
+                                    select(name="trim").cselect#trim
+                                        option(value="whitebox") Черновая (или whitebox)
+                                        option(value="finish") Чистовая
+                        .cblock__field.cfield
+                            .cfield__row
+                                .cfield__left
+                                    .cfield__name Выберите количество комнат:
+                                .cfield__right
+                                    select(name="rooms").cselect#rooms
+                                        option(value=0) студия
+                                        option(value=1) 1
+                                        option(value=2) 2
+                                        option(value=3) 3
+                                        option(value=4) 4
+                                        option(value=5) 5
+                                        option(value=6) 6+
+                        .cblock__field.cfield
+                            .cfield__row
+                                .cfield__left
+                                    .cfield__name План в AutoCad будем чертить?
+                                .cfield__right
+                                    .cradios
+                                        label.cradios__item.cradio
+                                            input(type="radio" name="autocad" value="no" checked).cradio__input
+                                            span.cradio__view
+                                                span.cradio__round
+                                                span.cradio__name нет, не нужен
+                                        label.cradios__item.cradio
+                                            input(type="radio" name="autocad" value="simple").cradio__input
+                                            span.cradio__view
+                                                span.cradio__round
+                                                span.cradio__name простой обмерный
+                                        label.cradios__item.cradio
+                                            input(type="radio" name="autocad" value="yes").cradio__input
+                                            span.cradio__view
+                                                span.cradio__round
+                                                span.cradio__name план для дизайн-проекта (подробный)
+                .calc__block.cblock
+                    .cblock__title Следующие виды работ по умолчанию включены в услугу приёмки:
+                    .cblock__fields.cblock__fields--gray
+                        each i in worksList
+                            .cblock__field.cfield.cfield--bdb
+                                +ccheckbox(i,"works",true,true)
+                .calc__block.cblock
+                    .cblock__title Далее просим выбрать, что мы ещё можем сделать для вас:
+                    .cblock__fields.cblock__fields--gray
+                        each i in otherList
+                            .cblock__field.cfield.cfield--bdb
+                                +ccheckbox(i,"other",false,false)
+                .calc__block.cblock
+                    .cblock__fields.cblock__fields--gray
+                        each i in otherList2
+                            .cblock__field.cfield.cfield--bdb
+                                +ccheckbox(i,"other2",false,false)
+                        .cblock__field.cfield.cfield--bdb
+                            label.ccheckbox
+                                input(type="checkbox" name="nds" value="yes").ccheckbox__input
+                                span.ccheckbox__view
+                                    span.ccheckbox__name.
+                                        Для организаций: <span style='margin-left: auto;'>с НДС</span>
+                                    span.ccheckbox__check.
+                                        <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                                            <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                                        </svg>
+                        .cblock__field.cfield.cfield--bdb
+                            label.ccheckbox
+                                input(type="checkbox" name="nds" value="no").ccheckbox__input
+                                span.ccheckbox__view
+                                    span.ccheckbox__name.
+                                        <span style='margin-left: auto;'>без НДС</span>
+                                    span.ccheckbox__check.
+                                        <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                                            <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                                        </svg>
+
+
+            .calc__total.ctotal
+                .ctotal__name ИТОГО:
+                .ctotal__sep
+                .ctotal__val
+                    span.ctotal__val-num#total 3600
+                    |&nbsp;
+                    span.ctotal__val-cur руб.
+            .calc__desc
+                p Скидки: 2 квартиры — 15%; 3 квартиры — 20%; 4 и более — 25%
+                p Повторная приёмка: 20 % от предыдущей стоимости
+                p.
+                    Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование плотномера — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!
+            button(type='button').calc__btn ЗАКАЗАТЬ ЗВОНОК
+
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer")
+        script(src="js/jQueryFormStyler/dist/jquery.formstyler.min.js")
+        script(src="script.js")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

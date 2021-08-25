@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="js/jQueryFormStyler/dist/jquery.formstyler.css">
+    <link rel="stylesheet" href="js/jQueryFormStyler/dist/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form class="calc" id="calc">
+      <div class="calc__title">КАЛЬКУЛЯТОР СТОИМОСТИ ПРИЁМКИ</div>
+      <div class="calc__blocks">
+        <div class="calc__block cblock">
+          <div class="cblock__fields">
+            <div class="cblock__field cfield">
+              <div class="cfield__row">
+                <div class="cfield__left">
+                  <div class="cfield__name">Введите площадь (30 - минимум) м2:</div>
+                </div>
+                <div class="cfield__right">
+                  <input class="cinput" type="number" id="square" name="square" value="30">
+                </div>
+              </div>
+            </div>
+            <div class="cblock__field cfield">
+              <div class="cfield__row">
+                <div class="cfield__left">
+                  <div class="cfield__name">Выберите вид отделки:</div>
+                </div>
+                <div class="cfield__right">
+                  <select class="cselect" name="trim" id="trim">
+                    <option value="whitebox">Черновая (или whitebox)</option>
+                    <option value="finish">Чистовая</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="cblock__field cfield">
+              <div class="cfield__row">
+                <div class="cfield__left">
+                  <div class="cfield__name">Выберите количество комнат:</div>
+                </div>
+                <div class="cfield__right">
+                  <select class="cselect" name="rooms" id="rooms">
+                    <option value="0">студия</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6+</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="cblock__field cfield">
+              <div class="cfield__row">
+                <div class="cfield__left">
+                  <div class="cfield__name">План в AutoCad будем чертить?</div>
+                </div>
+                <div class="cfield__right">
+                  <div class="cradios">
+                    <label class="cradios__item cradio">
+                      <input class="cradio__input" type="radio" name="autocad" value="no" checked><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">нет, не нужен</span></span>
+                    </label>
+                    <label class="cradios__item cradio">
+                      <input class="cradio__input" type="radio" name="autocad" value="simple"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">простой обмерный</span></span>
+                    </label>
+                    <label class="cradios__item cradio">
+                      <input class="cradio__input" type="radio" name="autocad" value="yes"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">план для дизайн-проекта (подробный)</span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calc__block cblock">
+          <div class="cblock__title">Следующие виды работ по умолчанию включены в услугу приёмки:</div>
+          <div class="cblock__fields cblock__fields--gray">
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Список дефектов для акта приёма-передачи"/><span class="ccheckbox__view"><span class="ccheckbox__name">Список дефектов для акта приёма-передачи</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Анемометр (проверка вентиляии)"/><span class="ccheckbox__view"><span class="ccheckbox__name">Анемометр (проверка вентиляии)</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Монитор воздуха (влажность, температура, CO2)"/><span class="ccheckbox__view"><span class="ccheckbox__name">Монитор воздуха (влажность, температура, CO2)</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Проверка отклонений от вертикали/горизонтали/плоскостности"/><span class="ccheckbox__view"><span class="ccheckbox__name">Проверка отклонений от вертикали/горизонтали/плоскостности</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Проверка эндоскопом труднодоступных мест"/><span class="ccheckbox__view"><span class="ccheckbox__name">Проверка эндоскопом труднодоступных мест</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Проверка электросетей и выводов под них (заземление, УЗО, слаботочка)"/><span class="ccheckbox__view"><span class="ccheckbox__name">Проверка электросетей и выводов под них (заземление, УЗО, слаботочка)</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" disabled="disabled" name="works" readonly="readonly" checked="checked" value="Замер шума"/><span class="ccheckbox__view"><span class="ccheckbox__name">Замер шума</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="calc__block cblock">
+          <div class="cblock__title">Далее просим выбрать, что мы ещё можем сделать для вас:</div>
+          <div class="cblock__fields cblock__fields--gray">
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="Контрольный замер площади" id="testControl"/><span class="ccheckbox__view"><span class="ccheckbox__name">Контрольный замер площади</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="Замер электромагнитного фона" id="testMagnetic"/><span class="ccheckbox__view"><span class="ccheckbox__name">Замер электромагнитного фона</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="Замер радиационного фона" id="testRadiation"/><span class="ccheckbox__view"><span class="ccheckbox__name">Замер радиационного фона</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="Замер аммиака"/><span class="ccheckbox__view"><span class="ccheckbox__name">Замер аммиака</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="Тепловизионное обследование" id="thermal"/><span class="ccheckbox__view"><span class="ccheckbox__name">Тепловизионное обследование</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="— Нужен ли отчёт по тепловизионному обследованию?" id="thermalReport"/><span class="ccheckbox__view"><span class="ccheckbox__name">— Нужен ли отчёт по тепловизионному обследованию?</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="calc__block cblock">
+          <div class="cblock__fields cblock__fields--gray">
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other2" readonly="readonly" value="Нужно ли вам Заключение специалиста с фото и нормативами?" id="conclusion"/><span class="ccheckbox__view"><span class="ccheckbox__name">Нужно ли вам Заключение специалиста с фото и нормативами?</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="other2" readonly="readonly" value="Приёмка после ремонта" id="inspection"/><span class="ccheckbox__view"><span class="ccheckbox__name">Приёмка после ремонта</span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="nds" value="yes"><span class="ccheckbox__view"><span class="ccheckbox__name">Для организаций: <span style='margin-left: auto;'>с НДС</span></span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg></span></span>
+              </label>
+            </div>
+            <div class="cblock__field cfield cfield--bdb">
+              <label class="ccheckbox">
+                <input class="ccheckbox__input" type="checkbox" name="nds" value="no"><span class="ccheckbox__view"><span class="ccheckbox__name"><span style='margin-left: auto;'>без НДС</span></span><span class="ccheckbox__check">
+                    <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
+                        <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
+                    </svg>
+                    
+                    </span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calc__total ctotal">
+        <div class="ctotal__name">ИТОГО:</div>
+        <div class="ctotal__sep"></div>
+        <div class="ctotal__val"><span class="ctotal__val-num" id="total">3600</span>&nbsp;<span class="ctotal__val-cur">руб.</span></div>
+      </div>
+      <div class="calc__desc">
+        <p>Скидки: 2 квартиры — 15%; 3 квартиры — 20%; 4 и более — 25%</p>
+        <p>Повторная приёмка: 20 % от предыдущей стоимости</p>
+        <p>Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование плотномера — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!</p>
+      </div>
+      <button class="calc__btn" type="button">ЗАКАЗАТЬ ЗВОНОК</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="js/jQueryFormStyler/dist/jquery.formstyler.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
