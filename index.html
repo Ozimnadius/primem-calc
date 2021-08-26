@@ -68,13 +68,13 @@
                 <div class="cfield__right">
                   <div class="cradios">
                     <label class="cradios__item cradio">
-                      <input class="cradio__input" type="radio" name="autocad" value="no" checked><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">нет, не нужен</span></span>
+                      <input class="cradio__input" type="radio" name="autocad" value="no" checked><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">нет, не нужен</span><span class="cardio__tooptip tooltip" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!">(?)</span></span>
                     </label>
                     <label class="cradios__item cradio">
-                      <input class="cradio__input" type="radio" name="autocad" value="simple"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">простой обмерный</span></span>
+                      <input class="cradio__input" type="radio" name="autocad" value="simple"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">простой обмерный</span><span class="cardio__tooptip tooltip" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!">(?)</span></span>
                     </label>
                     <label class="cradios__item cradio">
-                      <input class="cradio__input" type="radio" name="autocad" value="yes"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">план для дизайн-проекта (подробный)</span></span>
+                      <input class="cradio__input" type="radio" name="autocad" value="yes"><span class="cradio__view"><span class="cradio__round"></span><span class="cradio__name">план для дизайн-проекта (подробный)</span><span class="cardio__tooptip tooltip" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!">(?)</span></span>
                     </label>
                   </div>
                 </div>
@@ -212,7 +212,7 @@
             </div>
             <div class="cblock__field cfield cfield--bdb">
               <label class="ccheckbox">
-                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="— Нужен ли отчёт по тепловизионному обследованию?" id="thermalReport"/><span class="ccheckbox__view"><span class="ccheckbox__name">— Нужен ли отчёт по тепловизионному обследованию?</span><span class="ccheckbox__check">
+                <input class="ccheckbox__input" type="checkbox" name="other" readonly="readonly" value="— Нужен ли отчёт по тепловизионному обследованию?" id="thermalReport"/><span class="ccheckbox__view"><span class="ccheckbox__name">— Нужен ли отчёт по тепловизионному обследованию <span class='tooltip' data-tippy-content='Тепловизионное обследование проводится ТОЛЬКО тогда, когда разница между внешней и внутренней температурой составляет не меньше 10-15 градусов по Цельсию'>(?)</span></span><span class="ccheckbox__check">
                     <svg height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg" >
                         <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/>
                     </svg>
@@ -273,12 +273,14 @@
       <div class="calc__desc">
         <p>Скидки: 2 квартиры — 15%; 3 квартиры — 20%; 4 и более — 25%</p>
         <p>Повторная приёмка: 20 % от предыдущей стоимости</p>
-        <p>Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование плотномера — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!</p>
+        <p>Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование <b>плотномера</b> — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!</p>
       </div>
       <button class="calc__btn" type="button">ЗАКАЗАТЬ ЗВОНОК</button>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script src="js/jQueryFormStyler/dist/jquery.formstyler.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="script.js"></script>
   </body>
 </html>

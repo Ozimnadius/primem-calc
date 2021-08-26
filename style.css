@@ -302,9 +302,12 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .ccheckbox__check {
   width: 18px;
@@ -371,4 +374,19 @@
     font-size: 24px;
     font-weight: 500;
   }
+}
+
+.tooltip {
+  margin-left: 5px;
+  color: red;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.tippy-box {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
 }

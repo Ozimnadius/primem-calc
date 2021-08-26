@@ -4,6 +4,21 @@ window.addEventListener('load', function () {
 
     let calc = new Calc();
 
+    // $('.tooltip').on('click', function (e){
+    //    e.preventDefault();
+    //    $(this).toggleClass("active");
+    // });
+    //
+    // $(".calc").on("click", function (e){
+    //    if($(e.target).closest('.tooltip').length==0){
+    //        $('.tooltip').removeClass("active");
+    //    }
+    // });
+
+    tippy('[data-tippy-content]');
+
+
+
 });
 
 class Calc {

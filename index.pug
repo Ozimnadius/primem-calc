@@ -56,7 +56,7 @@
             id: "thermal"
         },
         {
-            name: "— Нужен ли отчёт по тепловизионному обследованию?",
+            name: "— Нужен ли отчёт по тепловизионному обследованию <span class='tooltip' data-tippy-content='Тепловизионное обследование проводится ТОЛЬКО тогда, когда разница между внешней и внутренней температурой составляет не меньше 10-15 градусов по Цельсию'>(?)</span>",
             val: "— Нужен ли отчёт по тепловизионному обследованию?",
             id: "thermalReport"
         }
@@ -145,16 +145,19 @@ html(lang='en')
                                             span.cradio__view
                                                 span.cradio__round
                                                 span.cradio__name нет, не нужен
+                                                span(data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!").cardio__tooptip.tooltip (?)
                                         label.cradios__item.cradio
                                             input(type="radio" name="autocad" value="simple").cradio__input
                                             span.cradio__view
                                                 span.cradio__round
                                                 span.cradio__name простой обмерный
+                                                span(data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!").cardio__tooptip.tooltip (?)
                                         label.cradios__item.cradio
                                             input(type="radio" name="autocad" value="yes").cradio__input
                                             span.cradio__view
                                                 span.cradio__round
                                                 span.cradio__name план для дизайн-проекта (подробный)
+                                                span(data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, quam!").cardio__tooptip.tooltip (?)
                 .calc__block.cblock
                     .cblock__title Следующие виды работ по умолчанию включены в услугу приёмки:
                     .cblock__fields.cblock__fields--gray
@@ -205,12 +208,14 @@ html(lang='en')
                 p Скидки: 2 квартиры — 15%; 3 квартиры — 20%; 4 и более — 25%
                 p Повторная приёмка: 20 % от предыдущей стоимости
                 p.
-                    Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование плотномера — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!
+                    Определение прочности бетона различными способами (<b>ультразвуковым, ударно-импульсным,  отрыв со скалыванием</b>), а также использование <b>плотномера</b> — рассчитываются в зависимости от параметров помещения (тип конструкции, объем и т.п.) Чтобы узнать точную стоимость этих видов работ — звоните!
             button(type='button').calc__btn ЗАКАЗАТЬ ЗВОНОК
 
 
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer")
         script(src="js/jQueryFormStyler/dist/jquery.formstyler.min.js")
+        script(src="https://unpkg.com/@popperjs/core@2")
+        script(src="https://unpkg.com/tippy.js@6")
         script(src="script.js")
 
 
